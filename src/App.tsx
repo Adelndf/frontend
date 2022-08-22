@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Account from "./pages/Account/Account";
+import Home from "./pages/Home/Home";
+import Portress from "./pages/Portress/Portress";
+import Reservation from "./pages/Reservation/Reservation";
+import SinglePortress from "./pages/SinglePortress/SinglePortress";
+import Thanks from "./pages/Thanks/Thanks";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portress" element={<Portress />} />
+        <Route path="/portress/:id" element={<SinglePortress />} />
+        <Route path="/reservation" element={<Reservation />} />
+        <Route path="/payment/success" element={<Thanks />} />
+        <Route path="/account" element={<Account />} />
+      </Routes>
     </div>
   );
 }
